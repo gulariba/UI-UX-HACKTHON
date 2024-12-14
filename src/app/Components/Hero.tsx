@@ -21,7 +21,7 @@ const Hero = () => {
       {/* Right Side Image */}
       <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
         <Image
-          src="/rocket.png"
+          src="/Rocket.png"
           alt="Hero Image"
           className="object-contain rounded-lg"
           width={600}  // Set appropriate width
