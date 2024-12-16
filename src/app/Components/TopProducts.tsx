@@ -2,96 +2,55 @@ import Image from "next/image";
 
 const TopProducts = () => {
   return (
-    <div className="relative bg-[#FFFFFF] w-full h-[777px]">
+    <div className="bg-[#FFFFFF] w-full py-10">
       {/* Heading Section */}
-      <div className="absolute top-[50px] w-full flex justify-center">
-        <h1 className="text-3xl text-[#000000] font-poppins font-medium leading-[54px]">
+      <div className="flex justify-center mb-4">
+        <h1 className="text-2xl md:text-3xl text-[#000000] font-poppins font-medium">
           Top Picks For You
         </h1>
       </div>
 
       {/* Paragraph Section */}
-      <div className="absolute top-[120px] left-1/2 transform -translate-x-1/2 w-[773px] text-[#9F9F9F] text-[16px] text-center font-poppins font-medium leading-[24px]">
+      <div className="mx-auto w-[90%] md:w-[773px] text-center text-[#9F9F9F] text-sm md:text-base font-poppins font-medium leading-[24px] mb-8">
         <p>
           Find a bright ideal to suit your taste with our great selection of
           suspension, floor, and table lights.
         </p>
       </div>
 
-      {/* Images and Product Info Section */}
-      <div className="absolute top-[200px] left-1/2 transform -translate-x-1/2 flex justify-between w-full px-[50px]">
-        {/* First Product */}
-        <div className="flex flex-col justify-center items-center">
-          <Image
-            src="/sofa.png"
-            alt="Product Image 1"
-            width={287}
-            height={372}
-            className="object-cover"
-          />
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] mt-3 text-center">
-            Trenton Modular Sofa_3 Fon
-          </p>
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] text-center">
-            25,000,00
-          </p>
-        </div>
-
-        {/* Second Product */}
-        <div className="flex flex-col justify-center items-center">
-          <Image
-            src="/dinningchair.png"
-            alt="Product Image 2"
-            width={287}
-            height={372}
-            className="object-cover"
-          />
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] mt-3 text-center">
-            Dining Chair Set
-          </p>
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] text-center">
-            25,000,00
-          </p>
-        </div>
-
-        {/* Third Product */}
-        <div className="flex flex-col justify-center items-center">
-          <Image
-            src="/Mask.png"
-            alt="Product Image 3"
-            width={287}
-            height={372}
-            className="object-cover"
-          />
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] mt-3 text-center">
-            Modern Lamp
-          </p>
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] text-center">
-            25,000,00
-          </p>
-        </div>
-
-        {/* Fourth Product */}
-        <div className="flex flex-col justify-center items-center">
-          <Image
-            src="/Mask2.png"
-            alt="Product Image 4"
-            width={287}
-            height={372}
-            className="object-cover"
-          />
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] mt-3 text-center">
-            Desk Lamp
-          </p>
-          <p className="text-[#000000] font-poppins font-normal text-[16px] leading-[24px] w-[194px] h-[24px] text-center">
-            25,000,00
-          </p>
-        </div>
+      {/* Product Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-6 md:px-10">
+        {/* Product Card */}
+        {[
+          { src: "/sofa.png", title: "Trenton Modular Sofa_3 Fon", price: "25,000.00" },
+          { src: "/dinningchair.png", title: "Dining Chair Set", price: "25,000.00" },
+          { src: "/Mask.png", title: "Modern Lamp", price: "25,000.00" },
+          { src: "/Mask2.png", title: "Desk Lamp", price: "25,000.00" },
+        ].map((product, index) => (
+          <div
+            key={index}
+            className="flex flex-col justify-center items-center text-center"
+          >
+            <Image
+              src={product.src}
+              alt={product.title}
+              width={287}
+              height={372}
+              className="object-cover rounded-lg"
+            />
+            <p className="text-[#000000] font-poppins font-normal text-sm md:text-base leading-[24px] mt-3">
+              {product.title}
+            </p>
+            <p className="text-[#000000] font-poppins font-medium text-sm md:text-base leading-[24px]">
+              {product.price}
+            </p>
+          </div>
+        ))}
       </div>
 
-      {/* Centered View More Button */}
-      <div className="absolute bottom-[20px] left-1/2 transform -translate-x-1/2">
-        <button className="w-[115px] h-[49px] text-[#000000] border-2 border-[#000000] text-center font-poppins text-[16px] leading-[24px] underline">
+      {/* View More Button */}
+      <div className="flex justify-center mt-8">
+        <button className="w-[115px] h-[49px] text-[#000000] border-2 border-[#000000] text-center font-poppins text-sm md:text-base underline">
           View More
         </button>
       </div>
