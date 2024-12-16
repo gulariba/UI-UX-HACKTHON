@@ -1,7 +1,15 @@
 'use client';
 
 import React, { useState } from "react";
-import { FaSearch, FaHeart, FaShoppingCart, FaUser, FaBars, FaTimes } from "react-icons/fa";
+import {
+  AiOutlineSearch, // Outline search icon
+  AiOutlineHeart,  // Outline heart icon
+  AiOutlineShoppingCart, // Outline cart icon
+  AiOutlineMenu, // Outline menu (hamburger)
+  AiOutlineClose, // Outline close (X)
+  AiOutlineExclamation, // Outline exclamation mark
+} from "react-icons/ai";
+import { MdOutlinePerson } from "react-icons/md"; // Outline user icon
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,8 +20,6 @@ const Navbar = () => {
 
   return (
     <nav className="w-full h-[100px] flex justify-between items-center bg-[#FBEBB5] px-6 md:px-12 shadow-lg relative">
-      
-
       {/* Center: Navigation Links (Desktop) */}
       <div className="hidden md:flex flex-1 justify-center space-x-12 font-poppins">
         <a href="#home" className="text-[#000000] text-lg hover:text-gray-600">
@@ -32,17 +38,19 @@ const Navbar = () => {
 
       {/* Right Side: Icons */}
       <div className="flex space-x-6 font-poppins text-[#000000] text-base">
-        <a href="#user" className="hover:text-gray-600">
-          <FaUser className="h-5 w-5" />
+        {/* User Icon with Exclamation */}
+        <a href="#user" className="relative hover:text-gray-600">
+          <MdOutlinePerson className="h-6 w-6" />
+          <AiOutlineExclamation className="absolute top-[-4px] right-[-4px] h-3 w-3 text-[#000000]" />
         </a>
         <a href="#search" className="hover:text-gray-600">
-          <FaSearch className="h-5 w-5" />
+          <AiOutlineSearch className="h-6 w-6" />
         </a>
         <a href="#wishlist" className="hover:text-gray-600">
-          <FaHeart className="h-5 w-5" />
+          <AiOutlineHeart className="h-6 w-6" />
         </a>
         <a href="#cart" className="hover:text-gray-600">
-          <FaShoppingCart className="h-5 w-5" />
+          <AiOutlineShoppingCart className="h-6 w-6" />
         </a>
       </div>
 
@@ -53,7 +61,7 @@ const Navbar = () => {
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          {isMobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
       </div>
 
