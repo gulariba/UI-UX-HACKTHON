@@ -3,11 +3,11 @@ import Image from "next/image"; // Import Image from next/image
 
 const Hero = () => {
   return (
-    <section className="w-full h-auto bg-[#FBEBB5] flex flex-col md:flex-row items-center justify-center relative px-4 py-8">
+    <section className="w-full h-auto bg-[#FBEBB5] flex flex-col md:flex-row items-center justify-center relative px-6 md:px-12 py-10 md:py-16">
       {/* Left Side Content */}
-      <div className="flex-1 flex flex-col justify-center md:items-start items-center text-center md:text-left px-4 md:px-8 lg:px-12">
+      <div className="flex-[1.2] flex flex-col justify-center md:items-start items-center text-center md:text-left px-6 lg:px-14">
         {/* Subheading */}
-        <h2 className="font-poppins font-medium text-[#000000] mb-4 text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] leading-[36px] sm:leading-[48px] md:leading-[72px]">
+        <h2 className="font-poppins font-medium text-[#000000] mb-6 text-[36px] sm:text-[48px] md:text-[56px] lg:text-[72px] leading-tight sm:leading-tight md:leading-[64px] lg:leading-[84px]">
           Rocket Single Seater
         </h2>
         <a
@@ -19,14 +19,15 @@ const Hero = () => {
       </div>
 
       {/* Right Side Image */}
-      <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
+      <div className="flex-[1.5] flex justify-center items-center mt-8 md:mt-0">
         <Image
           src="/Rocket.png"
           alt="Hero Image"
           className="object-contain rounded-lg"
-          width={600}  // Set appropriate width
-          height={600} // Set appropriate height
+          width={800} // Increased width
+          height={800} // Increased height
           layout="intrinsic" // Ensures aspect ratio is preserved while resizing
+          priority // Preloads the image for better performance
         />
       </div>
     </section>
