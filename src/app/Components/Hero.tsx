@@ -23,7 +23,7 @@ const Hero = () => {
         {/* Image Section */}
         <div className="mt-8 sm:mt-0 sm:w-1/2 flex justify-center">
           <Image
-            src="/Pic1.png"
+            src="/pic1.png"
             alt="Hero Image"
             width={1200}   // Increased width for a larger image
             height={1200}  // Increased height for better proportion
